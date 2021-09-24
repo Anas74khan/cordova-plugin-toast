@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-xtoast" version="0.0.1">
+    <name>xtoast</name>
+
+    <description>This Plugin allows you to create native toast.</description>
+
+    <author>Mohd Anas Khan</author>
+
+    <license>MIT</license>
+
+    <keywords>cordova, plugin, toast, Mobile</keywords>
+
+    <repo>https://github.com/Anas74khan/cordova-plugin-xtoast.git</repo>
+
+    <issue>https://github.com/Anas74khan/cordova-plugin-xtoast/issues</issue>
+
+    <js-module src="www/xtoast.js" name="xtoast">
+        <clobbers target="window.xtoast" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="xtoast">
+                <param name="android-package" value="com.anas74khan.xtoast.xtoast" />
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/xtoast.java" target-dir="src/com/anas74khan/xtoast"/>
+    </platform>
+</plugin>
